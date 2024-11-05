@@ -1,0 +1,11 @@
+Model Information:
+* title:	Dice
+* source:	https://sketchfab.com/3d-models/dice-c2fed9621cbe43f786c5c5667f731a64
+* author:	OZU (https://sketchfab.com/ozukawa)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Dice" (https://sketchfab.com/3d-models/dice-c2fed9621cbe43f786c5c5667f731a64) by OZU (https://sketchfab.com/ozukawa) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

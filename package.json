@@ -1,0 +1,38 @@
+{
+  "name": "dice",
+  "type": "module",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "run-p type-check \"build-only {@}\" --",
+    "preview": "vite preview",
+    "build-only": "vite build",
+    "type-check": "vue-tsc --build --force",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "prebuild": "eslint ."
+  },
+  "dependencies": {
+    "@types/cannon": "^0.1.13",
+    "@types/three": "^0.169.0",
+    "cannon-es": "^0.20.0",
+    "three": "^0.169.0",
+    "three.interaction": "github:repalash/three.interaction.js#types",
+    "vue": "^3.5.12"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^3.8.0",
+    "@tsconfig/node20": "^20.1.4",
+    "@types/node": "^20.16.11",
+    "@unocss/eslint-plugin": "^0.62.4",
+    "@vitejs/plugin-vue": "^5.1.4",
+    "@vue/tsconfig": "^0.5.1",
+    "eslint": "^9.12.0",
+    "eslint-plugin-format": "^0.1.2",
+    "npm-run-all2": "^6.2.3",
+    "typescript": "~5.5.4",
+    "vite": "^5.4.8",
+    "vue-tsc": "^2.1.6"
+  }
+}
