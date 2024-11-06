@@ -1,10 +1,11 @@
 <script setup lang="ts">
 import { onMounted, ref } from 'vue'
-import { Dice } from '../dist/index.es'
+
+import { Dice } from './three/index'
 
 const container = ref<HTMLDivElement>()
 onMounted(() => {
-  const dice = new Dice({ element: container.value!, diceColor: 0xFF0000, shadowEnable: false })
+  const dice = new Dice({ element: container.value!, diceColor: 0xFF0000, shadowEnable: true, modlePath: '/dice/dice.glb' })
 
   dice.on((number) => {
     // eslint-disable-next-line no-alert

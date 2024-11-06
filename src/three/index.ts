@@ -53,6 +53,7 @@ const _defautlOptions = {
 }
 type DiceParams = Partial<typeof _defautlOptions> & {
   element: Element | undefined
+  modlePath: string
 }
 /**
  * 骰子投掷
@@ -74,7 +75,7 @@ export class Dice {
   private event: Array<(number: number) => void> = []
   directionalLight: PointLight | undefined
   element: Element | undefined
-  options: Partial<DiceParams> = {}
+  options: Partial<DiceParams> = { modlePath: '/dice/dice.glb' }
   contactMaterial!: ContactMaterial
   /**
    * @param {object} params 初始化参数
@@ -153,8 +154,8 @@ export class Dice {
   }
 
   async loadMoudle() {
-    const { diceScale } = this.options
-    const modle = await new GLTFLoader().loadAsync('./dice/dice.glb')
+    const { diceScale, modlePath } = this.options
+    const modle = await new GLTFLoader().loadAsync(modlePath!)
     this.diceModle = modle.scene
     // eslint-disable-next-line ts/ban-ts-comment
     // @ts-expect-error

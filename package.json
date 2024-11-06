@@ -1,10 +1,10 @@
 {
   "name": "dice",
   "type": "module",
-  "version": "0.0.0",
+  "version": "0.0.2",
   "private": true,
-  "module": "dist/index.es.js",
-  "types": "dist/index.es.d.ts",
+  "module": "build/index.es.js",
+  "types": "build/index.es.d.ts",
   "scripts": {
     "dev": "vite",
     "build": "run-p type-check \"build-only {@}\" --",
