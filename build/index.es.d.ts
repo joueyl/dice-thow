@@ -80,6 +80,10 @@ export declare class Dice {
     updateWorld(): void;
     loadMoudle(): Promise<void>;
     initThree(): Promise<void>;
+    /**
+     * 加载完成回调
+     * @param {Function}
+     */
     onLoaded(calback: () => void): void;
     update(): void;
     private resizie;

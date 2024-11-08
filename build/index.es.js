@@ -1781,6 +1781,10 @@ class ln {
       l();
     });
   }
+  /**
+   * 加载完成回调
+   * @param {Function}
+   */
   onLoaded(e) {
     this.loadEvent.push(e);
   }
