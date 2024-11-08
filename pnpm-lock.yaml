@@ -13,7 +13,7 @@ importers:
         version: 0.20.0
       dice:
         specifier: git+https://gitee.com/joueyl/throw-dice.git
-        version: git+https://gitee.com/joueyl/throw-dice.git#e3f18d8e46954b8a61d80538a1cb82acd61aa087
+        version: git+https://gitee.com/joueyl/throw-dice.git#1855650b3db9f9c3feb7dfdc6c85414695c06303
       three:
         specifier: ^0.169.0
         version: 0.169.0
@@ -1056,9 +1056,9 @@ packages:
   devlop@1.1.0:
     resolution: {integrity: sha512-RWmIqhcFf1lRYBvNmr7qTNuyCt/7/ns2jbpp1+PalgE/rDQcBT0fioSMUpJ93irlUhC5hrg4cYqe6U+0ImW0rA==}
 
-  dice@git+https://gitee.com/joueyl/throw-dice.git#e3f18d8e46954b8a61d80538a1cb82acd61aa087:
-    resolution: {commit: e3f18d8e46954b8a61d80538a1cb82acd61aa087, repo: https://gitee.com/joueyl/throw-dice.git, type: git}
-    version: 0.0.0
+  dice@git+https://gitee.com/joueyl/throw-dice.git#1855650b3db9f9c3feb7dfdc6c85414695c06303:
+    resolution: {commit: 1855650b3db9f9c3feb7dfdc6c85414695c06303, repo: https://gitee.com/joueyl/throw-dice.git, type: git}
+    version: 0.0.2
 
   doctrine@3.0.0:
     resolution: {integrity: sha512-yS+Q5i3hBf7GBkd4KG8a7eBNNWNGLTaEwwYWUijIYM7zrlYDM0BFXHjjPWlWZ1Rg7UaddZeIDmi9jF3HmqiQ2w==}
@@ -3134,7 +3134,7 @@ snapshots:
     dependencies:
       dequal: 2.0.3
 
-  dice@git+https://gitee.com/joueyl/throw-dice.git#e3f18d8e46954b8a61d80538a1cb82acd61aa087:
+  dice@git+https://gitee.com/joueyl/throw-dice.git#1855650b3db9f9c3feb7dfdc6c85414695c06303:
     dependencies:
       cannon-es: 0.20.0
       three: 0.169.0
