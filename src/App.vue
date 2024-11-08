@@ -6,7 +6,10 @@ import { Dice } from './three/index'
 const container = ref<HTMLDivElement>()
 onMounted(() => {
   const dice = new Dice({ element: container.value!, diceColor: 0xFF0000, shadowEnable: true, modlePath: '/dice/dice.glb' })
-
+  dice.onLoaded(() => {
+    dice.renderer.setClearAlpha(0)
+    // dice.renderer.setClearColor(0xFF0000)
+  })
   dice.on((number) => {
     // eslint-disable-next-line no-alert
     alert(`结果是${number}`)

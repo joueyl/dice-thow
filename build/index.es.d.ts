@@ -51,6 +51,7 @@ export declare class Dice {
     element: Element | undefined;
     options: Partial<DiceParams>;
     contactMaterial: ContactMaterial;
+    private loadEvent;
     /**
      * @param {object} params 初始化参数
      * @param {number} params.diceColor 骰子颜色 默认- 0x000000
@@ -79,6 +80,7 @@ export declare class Dice {
     updateWorld(): void;
     loadMoudle(): Promise<void>;
     initThree(): Promise<void>;
+    onLoaded(calback: () => void): void;
     update(): void;
     private resizie;
     render(): void;

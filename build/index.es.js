@@ -1,9 +1,9 @@
 var be = Object.defineProperty;
 var Ie = (h, e, t) => e in h ? be(h, e, { enumerable: !0, configurable: !0, writable: !0, value: t }) : h[e] = t;
-var E = (h, e, t) => Ie(h, typeof e != "symbol" ? e + "" : e, t);
+var w = (h, e, t) => Ie(h, typeof e != "symbol" ? e + "" : e, t);
 import { World as Ne, Material as ee, Body as te, Vec3 as y, Box as Ce, Plane as Oe, ContactMaterial as Pe } from "cannon-es";
-import { TrianglesDrawMode as Fe, TriangleFanDrawMode as Q, TriangleStripDrawMode as fe, Loader as De, LoaderUtils as v, FileLoader as pe, Color as I, LinearSRGBColorSpace as N, SpotLight as Be, PointLight as me, DirectionalLight as He, MeshBasicMaterial as G, SRGBColorSpace as U, MeshPhysicalMaterial as S, Vector2 as ge, Matrix4 as j, Vector3 as F, Quaternion as Ae, InstancedMesh as ke, InstancedBufferAttribute as Ge, Object3D as Te, TextureLoader as ve, ImageBitmapLoader as Ue, BufferAttribute as V, InterleavedBuffer as je, InterleavedBufferAttribute as Ke, LinearFilter as xe, LinearMipmapLinearFilter as Re, RepeatWrapping as Z, PointsMaterial as Ve, Material as z, LineBasicMaterial as ze, MeshStandardMaterial as we, DoubleSide as Xe, PropertyBinding as We, BufferGeometry as qe, SkinnedMesh as Ye, Mesh as Ee, LineSegments as Qe, Line as Ze, LineLoop as Je, Points as $e, Group as X, PerspectiveCamera as ye, MathUtils as et, OrthographicCamera as tt, Skeleton as nt, AnimationClip as st, Bone as it, InterpolateLinear as Me, ColorManagement as ne, NearestFilter as rt, NearestMipmapNearestFilter as ot, LinearMipmapNearestFilter as at, NearestMipmapLinearFilter as ct, ClampToEdgeWrapping as lt, MirroredRepeatWrapping as ut, InterpolateDiscrete as ht, FrontSide as dt, Texture as se, VectorKeyframeTrack as ie, NumberKeyframeTrack as re, QuaternionKeyframeTrack as oe, Box3 as _e, Sphere as ft, Interpolant as pt, Scene as mt, WebGLRenderer as gt, PCFShadowMap as ae, AmbientLight as At, PlaneGeometry as Tt, ShadowMaterial as xt, AxesHelper as Rt } from "three";
-import { Interaction as wt } from "three.interaction";
+import { TrianglesDrawMode as Fe, TriangleFanDrawMode as Q, TriangleStripDrawMode as fe, Loader as De, LoaderUtils as G, FileLoader as pe, Color as I, LinearSRGBColorSpace as N, SpotLight as Be, PointLight as me, DirectionalLight as He, MeshBasicMaterial as v, SRGBColorSpace as U, MeshPhysicalMaterial as S, Vector2 as ge, Matrix4 as j, Vector3 as F, Quaternion as Ae, InstancedMesh as ke, InstancedBufferAttribute as ve, Object3D as Te, TextureLoader as Ge, ImageBitmapLoader as Ue, BufferAttribute as V, InterleavedBuffer as je, InterleavedBufferAttribute as Ke, LinearFilter as xe, LinearMipmapLinearFilter as Re, RepeatWrapping as Z, PointsMaterial as Ve, Material as z, LineBasicMaterial as ze, MeshStandardMaterial as Ee, DoubleSide as Xe, PropertyBinding as We, BufferGeometry as qe, SkinnedMesh as Ye, Mesh as we, LineSegments as Qe, Line as Ze, LineLoop as Je, Points as $e, Group as X, PerspectiveCamera as ye, MathUtils as et, OrthographicCamera as tt, Skeleton as nt, AnimationClip as st, Bone as it, InterpolateLinear as Me, ColorManagement as ne, NearestFilter as rt, NearestMipmapNearestFilter as ot, LinearMipmapNearestFilter as at, NearestMipmapLinearFilter as ct, ClampToEdgeWrapping as lt, MirroredRepeatWrapping as ut, InterpolateDiscrete as ht, FrontSide as dt, Texture as se, VectorKeyframeTrack as ie, NumberKeyframeTrack as re, QuaternionKeyframeTrack as oe, Box3 as _e, Sphere as ft, Interpolant as pt, Scene as mt, WebGLRenderer as gt, PCFShadowMap as ae, AmbientLight as At, PlaneGeometry as Tt, ShadowMaterial as xt, AxesHelper as Rt } from "three";
+import { Interaction as Et } from "three.interaction";
 function ce(h, e) {
   if (e === Fe)
     return console.warn("THREE.BufferGeometryUtils.toTrianglesDrawMode(): Geometry already defined as triangles."), h;
@@ -31,7 +31,7 @@ function ce(h, e) {
   } else
     return console.error("THREE.BufferGeometryUtils.toTrianglesDrawMode(): Unknown draw mode:", e), h;
 }
-class Et extends De {
+class wt extends De {
   constructor(e) {
     super(e), this.dracoLoader = null, this.ktx2Loader = null, this.meshoptDecoder = null, this.pluginCallbacks = [], this.register(function(t) {
       return new St(t);
@@ -42,7 +42,7 @@ class Et extends De {
     }), this.register(function(t) {
       return new kt(t);
     }), this.register(function(t) {
-      return new Gt(t);
+      return new vt(t);
     }), this.register(function(t) {
       return new Nt(t);
     }), this.register(function(t) {
@@ -64,7 +64,7 @@ class Et extends De {
     }), this.register(function(t) {
       return new Mt(t);
     }), this.register(function(t) {
-      return new vt(t);
+      return new Gt(t);
     }), this.register(function(t) {
       return new Ut(t);
     });
@@ -75,10 +75,10 @@ class Et extends De {
     if (this.resourcePath !== "")
       i = this.resourcePath;
     else if (this.path !== "") {
-      const c = v.extractUrlBase(e);
-      i = v.resolveURL(c, this.path);
+      const c = G.extractUrlBase(e);
+      i = G.resolveURL(c, this.path);
     } else
-      i = v.extractUrlBase(e);
+      i = G.extractUrlBase(e);
     this.manager.itemStart(e);
     const a = function(c) {
       n ? n(c) : console.error(c), s.manager.itemError(e), s.manager.itemEnd(e);
@@ -264,7 +264,7 @@ class _t {
     this.name = A.KHR_MATERIALS_UNLIT;
   }
   getMaterialType() {
-    return G;
+    return v;
   }
   extendParams(e, t, r) {
     const n = [];
@@ -513,7 +513,7 @@ class kt {
     })), this.isSupported;
   }
 }
-class Gt {
+class vt {
   constructor(e) {
     this.parser = e, this.name = A.EXT_TEXTURE_AVIF, this.isSupported = null;
   }
@@ -543,7 +543,7 @@ class Gt {
     })), this.isSupported;
   }
 }
-class vt {
+class Gt {
   constructor(e) {
     this.name = A.EXT_MESHOPT_COMPRESSION, this.parser = e;
   }
@@ -587,15 +587,15 @@ class Ut {
     return a.length < 1 ? null : (a.push(this.parser.createNodeMesh(e)), Promise.all(a).then((c) => {
       const u = c.pop(), l = u.isGroup ? u.children : [u], d = c[0].count, f = [];
       for (const m of l) {
-        const T = new j(), p = new F(), g = new Ae(), x = new F(1, 1, 1), w = new ke(m.geometry, m.material, d);
+        const T = new j(), p = new F(), g = new Ae(), x = new F(1, 1, 1), E = new ke(m.geometry, m.material, d);
         for (let R = 0; R < d; R++)
-          o.TRANSLATION && p.fromBufferAttribute(o.TRANSLATION, R), o.ROTATION && g.fromBufferAttribute(o.ROTATION, R), o.SCALE && x.fromBufferAttribute(o.SCALE, R), w.setMatrixAt(R, T.compose(p, g, x));
+          o.TRANSLATION && p.fromBufferAttribute(o.TRANSLATION, R), o.ROTATION && g.fromBufferAttribute(o.ROTATION, R), o.SCALE && x.fromBufferAttribute(o.SCALE, R), E.setMatrixAt(R, T.compose(p, g, x));
         for (const R in o)
           if (R === "_COLOR_0") {
             const L = o[R];
-            w.instanceColor = new Ge(L.array, L.itemSize, L.normalized);
+            E.instanceColor = new ve(L.array, L.itemSize, L.normalized);
           } else R !== "TRANSLATION" && R !== "ROTATION" && R !== "SCALE" && m.geometry.setAttribute(R, o[R]);
-        Te.prototype.copy.call(w, m), this.parser.assignFinalMaterial(w), f.push(w);
+        Te.prototype.copy.call(E, m), this.parser.assignFinalMaterial(E), f.push(E);
       }
       return u.isGroup ? (u.clear(), u.add(...f), u) : f[0];
     }));
@@ -689,10 +689,10 @@ class Se extends pt {
     return t;
   }
   interpolate_(e, t, r, n) {
-    const s = this.resultBuffer, i = this.sampleValues, a = this.valueSize, o = a * 2, c = a * 3, u = n - t, l = (r - t) / u, d = l * l, f = d * l, m = e * c, T = m - c, p = -2 * f + 3 * d, g = f - d, x = 1 - p, w = g - d + l;
+    const s = this.resultBuffer, i = this.sampleValues, a = this.valueSize, o = a * 2, c = a * 3, u = n - t, l = (r - t) / u, d = l * l, f = d * l, m = e * c, T = m - c, p = -2 * f + 3 * d, g = f - d, x = 1 - p, E = g - d + l;
     for (let R = 0; R !== a; R++) {
       const L = i[T + R + a], C = i[T + R + o] * u, _ = i[m + R + a], H = i[m + R] * u;
-      s[R] = x * L + w * C + p * _ + g * H;
+      s[R] = x * L + E * C + p * _ + g * H;
     }
     return s;
   }
@@ -778,7 +778,7 @@ const M = {
   BLEND: "BLEND"
 };
 function Yt(h) {
-  return h.DefaultMaterial === void 0 && (h.DefaultMaterial = new we({
+  return h.DefaultMaterial === void 0 && (h.DefaultMaterial = new Ee({
     color: 16777215,
     emissive: 0,
     metalness: 1,
@@ -884,7 +884,7 @@ class tn {
       const o = a.match(/Version\/(\d+)/);
       n = r && o ? parseInt(o[1], 10) : -1, s = a.indexOf("Firefox") > -1, i = s ? a.match(/Firefox\/([0-9]+)\./)[1] : -1;
     }
-    typeof createImageBitmap > "u" || r && n < 17 || s && i < 98 ? this.textureLoader = new ve(this.options.manager) : this.textureLoader = new Ue(this.options.manager), this.textureLoader.setCrossOrigin(this.options.crossOrigin), this.textureLoader.setRequestHeader(this.options.requestHeader), this.fileLoader = new pe(this.options.manager), this.fileLoader.setResponseType("arraybuffer"), this.options.crossOrigin === "use-credentials" && this.fileLoader.setWithCredentials(!0);
+    typeof createImageBitmap > "u" || r && n < 17 || s && i < 98 ? this.textureLoader = new Ge(this.options.manager) : this.textureLoader = new Ue(this.options.manager), this.textureLoader.setCrossOrigin(this.options.crossOrigin), this.textureLoader.setRequestHeader(this.options.requestHeader), this.fileLoader = new pe(this.options.manager), this.fileLoader.setResponseType("arraybuffer"), this.options.crossOrigin === "use-credentials" && this.fileLoader.setWithCredentials(!0);
   }
   setExtensions(e) {
     this.extensions = e;
@@ -1075,7 +1075,7 @@ class tn {
       return Promise.resolve(this.extensions[A.KHR_BINARY_GLTF].body);
     const n = this.options;
     return new Promise(function(s, i) {
-      r.load(v.resolveURL(t.uri, n.path), s, void 0, function() {
+      r.load(G.resolveURL(t.uri, n.path), s, void 0, function() {
         i(new Error('THREE.GLTFLoader: Failed to load buffer "' + t.uri + '".'));
       });
     });
@@ -1109,12 +1109,12 @@ class tn {
       let T, p;
       if (f && f !== l) {
         const g = Math.floor(d / f), x = "InterleavedBuffer:" + n.bufferView + ":" + n.componentType + ":" + g + ":" + n.count;
-        let w = t.cache.get(x);
-        w || (T = new c(a, g * f, n.count * f / u), w = new je(T, f / u), t.cache.add(x, w)), p = new Ke(w, o, d % f / u, m);
+        let E = t.cache.get(x);
+        E || (T = new c(a, g * f, n.count * f / u), E = new je(T, f / u), t.cache.add(x, E)), p = new Ke(E, o, d % f / u, m);
       } else
         a === null ? T = new c(n.count * o) : T = new c(a, d, n.count * o), p = new V(T, o, m);
       if (n.sparse !== void 0) {
-        const g = W.SCALAR, x = B[n.sparse.indices.componentType], w = n.sparse.indices.byteOffset || 0, R = n.sparse.values.byteOffset || 0, L = new x(i[1], w, n.sparse.count * g), C = new c(i[2], R, n.sparse.count * o);
+        const g = W.SCALAR, x = B[n.sparse.indices.componentType], E = n.sparse.indices.byteOffset || 0, R = n.sparse.values.byteOffset || 0, L = new x(i[1], E, n.sparse.count * g), C = new c(i[2], R, n.sparse.count * o);
         a !== null && (p = new V(p.array.slice(), p.itemSize, p.normalized)), p.normalized = !1;
         for (let _ = 0, H = L.length; _ < H; _++) {
           const O = L[_];
@@ -1172,7 +1172,7 @@ class tn {
         t.isImageBitmapLoader === !0 && (m = function(T) {
           const p = new se(T);
           p.needsUpdate = !0, d(p);
-        }), t.load(v.resolveURL(l, s.path), m, void 0, f);
+        }), t.load(G.resolveURL(l, s.path), m, void 0, f);
       });
     }).then(function(l) {
       return c === !0 && a.revokeObjectURL(o), b(l, i), l.userData.mimeType = i.mimeType || $t(i.uri), l;
@@ -1232,7 +1232,7 @@ class tn {
     e.material = r;
   }
   getMaterialType() {
-    return we;
+    return Ee;
   }
   /**
    * Specification: https://github.com/KhronosGroup/glTF/blob/master/specification/2.0/README.md#materials
@@ -1260,15 +1260,15 @@ class tn {
     }
     s.doubleSided === !0 && (a.side = Xe);
     const u = s.alphaMode || q.OPAQUE;
-    if (u === q.BLEND ? (a.transparent = !0, a.depthWrite = !1) : (a.transparent = !1, u === q.MASK && (a.alphaTest = s.alphaCutoff !== void 0 ? s.alphaCutoff : 0.5)), s.normalTexture !== void 0 && i !== G && (c.push(t.assignTexture(a, "normalMap", s.normalTexture)), a.normalScale = new ge(1, 1), s.normalTexture.scale !== void 0)) {
+    if (u === q.BLEND ? (a.transparent = !0, a.depthWrite = !1) : (a.transparent = !1, u === q.MASK && (a.alphaTest = s.alphaCutoff !== void 0 ? s.alphaCutoff : 0.5)), s.normalTexture !== void 0 && i !== v && (c.push(t.assignTexture(a, "normalMap", s.normalTexture)), a.normalScale = new ge(1, 1), s.normalTexture.scale !== void 0)) {
       const l = s.normalTexture.scale;
       a.normalScale.set(l, l);
     }
-    if (s.occlusionTexture !== void 0 && i !== G && (c.push(t.assignTexture(a, "aoMap", s.occlusionTexture)), s.occlusionTexture.strength !== void 0 && (a.aoMapIntensity = s.occlusionTexture.strength)), s.emissiveFactor !== void 0 && i !== G) {
+    if (s.occlusionTexture !== void 0 && i !== v && (c.push(t.assignTexture(a, "aoMap", s.occlusionTexture)), s.occlusionTexture.strength !== void 0 && (a.aoMapIntensity = s.occlusionTexture.strength)), s.emissiveFactor !== void 0 && i !== v) {
       const l = s.emissiveFactor;
       a.emissive = new I().setRGB(l[0], l[1], l[2], N);
     }
-    return s.emissiveTexture !== void 0 && i !== G && c.push(t.assignTexture(a, "emissiveMap", s.emissiveTexture, U)), Promise.all(c).then(function() {
+    return s.emissiveTexture !== void 0 && i !== v && c.push(t.assignTexture(a, "emissiveMap", s.emissiveTexture, U)), Promise.all(c).then(function() {
       const l = new i(a);
       return s.name && (l.name = s.name), b(l, s), t.associations.set(l, { materials: e }), s.extensions && D(n, l, s), l;
     });
@@ -1323,7 +1323,7 @@ class tn {
         let g;
         const x = c[f];
         if (p.mode === M.TRIANGLES || p.mode === M.TRIANGLE_STRIP || p.mode === M.TRIANGLE_FAN || p.mode === void 0)
-          g = s.isSkinnedMesh === !0 ? new Ye(T, x) : new Ee(T, x), g.isSkinnedMesh === !0 && g.normalizeSkinWeights(), p.mode === M.TRIANGLE_STRIP ? g.geometry = ce(g.geometry, fe) : p.mode === M.TRIANGLE_FAN && (g.geometry = ce(g.geometry, Q));
+          g = s.isSkinnedMesh === !0 ? new Ye(T, x) : new we(T, x), g.isSkinnedMesh === !0 && g.normalizeSkinWeights(), p.mode === M.TRIANGLE_STRIP ? g.geometry = ce(g.geometry, fe) : p.mode === M.TRIANGLE_FAN && (g.geometry = ce(g.geometry, Q));
         else if (p.mode === M.LINES)
           g = new Qe(T, x);
         else if (p.mode === M.LINE_STRIP)
@@ -1406,7 +1406,7 @@ class tn {
       Promise.all(u)
     ]).then(function(l) {
       const d = l[0], f = l[1], m = l[2], T = l[3], p = l[4], g = [];
-      for (let x = 0, w = d.length; x < w; x++) {
+      for (let x = 0, E = d.length; x < E; x++) {
         const R = d[x], L = f[x], C = m[x], _ = T[x], H = p[x];
         if (R === void 0) continue;
         R.updateMatrix && R.updateMatrix();
@@ -1663,7 +1663,7 @@ const sn = {
   // 物理引擎重力
   restitution: 0.5,
   // 反弹系数
-  background: 16777215,
+  background: 0,
   // 渲染器背景颜色
   lightColor: 16777215
   // 灯光颜色
@@ -1693,21 +1693,22 @@ class ln {
    * @param {number} params.lightColor 灯光颜色 默认- 0xFFFFFF
    */
   constructor(e) {
-    E(this, "scene", new mt());
-    E(this, "renderer", new gt({ antialias: !0 }));
-    E(this, "camera", new ye(75));
-    E(this, "world", new Ne());
-    E(this, "diceModle");
-    E(this, "floor");
-    E(this, "diceBody");
-    E(this, "interaction");
-    E(this, "threeChildren", {});
-    E(this, "start_throw", !1);
-    E(this, "event", []);
-    E(this, "directionalLight");
-    E(this, "element");
-    E(this, "options", { modlePath: "/dice/dice.glb" });
-    E(this, "contactMaterial");
+    w(this, "scene", new mt());
+    w(this, "renderer", new gt({ antialias: !0, alpha: !0 }));
+    w(this, "camera", new ye(75));
+    w(this, "world", new Ne());
+    w(this, "diceModle");
+    w(this, "floor");
+    w(this, "diceBody");
+    w(this, "interaction");
+    w(this, "threeChildren", {});
+    w(this, "start_throw", !1);
+    w(this, "event", []);
+    w(this, "directionalLight");
+    w(this, "element");
+    w(this, "options", { modlePath: "/dice/dice.glb" });
+    w(this, "contactMaterial");
+    w(this, "loadEvent", []);
     if (Object.assign(this.options, sn, e), !this.options.element)
       throw new Error("请传入容器Element");
     const t = this.options.element;
@@ -1746,7 +1747,7 @@ class ln {
     this.world.gravity.set(e[0], e[1], e[2]), this.contactMaterial.restitution = t;
   }
   async loadMoudle() {
-    const { diceScale: e, modlePath: t } = this.options, r = await new Et().loadAsync(t);
+    const { diceScale: e, modlePath: t } = this.options, r = await new wt().loadAsync(t);
     this.diceModle = r.scene, this.diceModle.on("click", () => {
       var o, c, u, l;
       const { throwPotion: n, angularVelocity: s, velocity: i } = this.options;
@@ -1775,16 +1776,21 @@ class ln {
       transparent: !0,
       opacity: i,
       name: "shadow"
-    }), u = new Ee(o, c);
-    this.threeChildren.floor = u, u.rotation.set(-Math.PI / 2, 0, 0), u.receiveShadow = !0, a.castShadow = !0, a.shadow.mapSize.width = 2048, a.shadow.mapSize.height = 2048, a.shadow.camera.near = 0.5, a.shadow.camera.far = 500, await this.loadMoudle(), this.initWorld(), this.update(), this.interaction = new wt(this.renderer, this.scene, this.camera), this.scene.add(a, u, this.threeChildren.amlight), e == null || e.appendChild(this.renderer.domElement), this.render();
+    }), u = new we(o, c);
+    this.threeChildren.floor = u, u.rotation.set(-Math.PI / 2, 0, 0), u.receiveShadow = !0, a.castShadow = !0, a.shadow.mapSize.width = 2048, a.shadow.mapSize.height = 2048, a.shadow.camera.near = 0.5, a.shadow.camera.far = 500, await this.loadMoudle(), this.initWorld(), this.update(), this.interaction = new Et(this.renderer, this.scene, this.camera), this.scene.add(a, u, this.threeChildren.amlight), e == null || e.appendChild(this.renderer.domElement), this.render(), this.loadEvent.forEach((l) => {
+      l();
+    });
+  }
+  onLoaded(e) {
+    this.loadEvent.push(e);
   }
   update() {
     var m, T, p, g;
     const { shadowOpacity: e, shadowColor: t, diceScale: r, diceColor: n, element: s, background: i, shadowEnable: a, ambientLightColor: o, ambientLightIntensity: c, lightColor: u, lightDecay: l, lightIntensity: d, lightPosition: f } = this.options;
     this.camera.aspect = s.clientWidth / s.clientHeight, this.renderer.setClearColor(i), this.renderer.setSize(s.clientWidth, s.clientHeight), this.renderer.setPixelRatio(window.devicePixelRatio), this.renderer.outputColorSpace = "srgb", this.renderer.shadowMap.enabled = a, this.renderer.shadowMap.type = ae, (m = this.threeChildren.amlight) == null || m.color.set(o), this.threeChildren.amlight.intensity = c, (T = this.threeChildren.light) == null || T.color.set(u), this.threeChildren.light.intensity = d, this.threeChildren.light.decay = l, this.threeChildren.light.position.copy(new F(...f)), this.threeChildren.light.castShadow = !0, this.threeChildren.light.shadow.mapSize.width = 2048, this.threeChildren.light.shadow.mapSize.height = 2048, this.threeChildren.light.shadow.camera.near = 0.5, this.threeChildren.light.shadow.camera.far = 500, this.diceModle.traverse((x) => {
       if (x.castShadow = !0, x.isMesh && x.name === "Object_4") {
-        const w = x.material;
-        w.color = new I(n);
+        const E = x.material;
+        E.color = new I(n);
       }
     }), (p = this.diceModle) == null || p.scale.set(r, r, r), (g = this.threeChildren.floor) == null || g.material.color.set(t), this.threeChildren.floor.material.opacity = e;
   }

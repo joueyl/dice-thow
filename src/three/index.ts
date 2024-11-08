@@ -48,7 +48,7 @@ const _defautlOptions = {
   refreshRate: 60, // 屏幕刷新率
   gravity: [0, -100, 0], // 物理引擎重力
   restitution: 0.5, // 反弹系数
-  background: 0xFFFFFF, // 渲染器背景颜色
+  background: 0x000000, // 渲染器背景颜色
   lightColor: 0xFFFFFF, // 灯光颜色
 }
 type DiceParams = Partial<typeof _defautlOptions> & {
@@ -62,7 +62,7 @@ type DiceParams = Partial<typeof _defautlOptions> & {
  */
 export class Dice {
   scene = new Scene()
-  renderer = new WebGLRenderer({ antialias: true })
+  renderer = new WebGLRenderer({ antialias: true, alpha: true })
   camera = new PerspectiveCamera(75)
   world = new World()
   diceModle: Group | undefined
@@ -77,6 +77,7 @@ export class Dice {
   element: Element | undefined
   options: Partial<DiceParams> = { modlePath: '/dice/dice.glb' }
   contactMaterial!: ContactMaterial
+  private loadEvent: Array<() => void> = []
   /**
    * @param {object} params 初始化参数
    * @param {number} params.diceColor 骰子颜色 默认- 0x000000
@@ -223,6 +224,13 @@ export class Dice {
     this.scene.add(light, floor, this.threeChildren.amlight)
     element?.appendChild(this.renderer.domElement)
     this.render()
+    this.loadEvent.forEach((item) => {
+      item()
+    })
+  }
+
+  onLoaded(calback: () => void) {
+    this.loadEvent.push(calback)
   }
 
   update() {
