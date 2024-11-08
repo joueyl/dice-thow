@@ -229,6 +229,10 @@ export class Dice {
     })
   }
 
+  /**
+   * 加载完成回调
+   * @param {Function}
+   */
   onLoaded(calback: () => void) {
     this.loadEvent.push(calback)
   }
